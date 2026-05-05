@@ -8,7 +8,7 @@ The code implements the two second-order landing methods from Algorithm 5.1:
 
 - `SOL`: solves the projection-free approximate Newton equation (4.11).
 - `SOL-sym`: solves the modified Newton equation (4.9) with the full
-  Riemannian Hessian under the metric `g`.
+  Riemannian Hessian under the metric g in (2.4).
 
 Both methods use the order-1 Newton–Schulz normal component `N(X)` from
 equation (3.5) and the second-order landing update
@@ -18,8 +18,8 @@ equation (3.5) and the second-order landing update
 
 ```text
 optimizer/
-  optimizer.py        # SOL, SOL-sym, landing field components, safe step rule
-  linear_solvers.py   # Krylov solvers under the extended canonical metric
+  optimizer.py        # SOL, SOL-sym, first-order landing, safe step rule,...
+  linear_solvers.py   # Krylov solvers under the metric g
 
 experiments/
   Procrustes/         # Orthogonal Procrustes experiment
