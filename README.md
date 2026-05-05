@@ -1,7 +1,7 @@
 # SOLanding
 
 This repository contains the reference Python implementation for the paper
-**"A Second-Order Method Landing on the Stiefel Manifold via Newton-Schulz
+**"A Second-Order Method Landing on the Stiefel Manifold via Newton--Schulz
 Iteration"** by Xinhui Xiong, Bin Gao, and P.-A. Absil.
 
 The code implements the two second-order landing methods from Algorithm 5.1:
@@ -10,7 +10,7 @@ The code implements the two second-order landing methods from Algorithm 5.1:
 - `SOL-sym`: solves the modified Newton equation (4.9) with the full
   Riemannian Hessian under the metric `g`.
 
-Both methods use the order-1 Newton-Schulz normal component `N(X)` from
+Both methods use the order-1 Newton--Schulz normal component `N(X)` from
 equation (3.5) and the second-order landing update
 `Lambda(X) = T(X) + N(X)`.
 
