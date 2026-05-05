@@ -27,12 +27,6 @@ experiments/
   ICA/                # Real-data independent component analysis experiment
 ```
 
-The public experiment scripts report the paper-aligned metrics `objective`,
-`gap` when an objective gap is available, `Rgrad_norm`, and
-`feasibility_violation`. They compare only `SOL` and `SOL-sym`; the
-first-order landing routine is used only to construct the warm-start point
-described in Section 6 of the paper.
-
 ## Installation
 
 ```bash
