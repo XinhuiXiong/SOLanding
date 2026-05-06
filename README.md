@@ -1,18 +1,8 @@
 # SOLanding
 
 This repository contains the reference Python implementation for the paper
-**"A Second-Order Method Landing on the Stiefel Manifold via Newton–Schulz
-Iteration"** by Xinhui Xiong, Bin Gao, and P.-A. Absil.
-
-The code implements the two second-order landing methods from Algorithm 5.1:
-
-- `SOL`: solves the projection-free approximate Newton equation (4.11).
-- `SOL-sym`: solves the modified Newton equation (4.9) with the full
-  Riemannian Hessian under the metric g in (2.4).
-
-Both methods use the order-1 Newton–Schulz normal component `N(X)` from
-equation (3.5) and the second-order landing update
-`Lambda(X) = T(X) + N(X)`.
+[A Second-Order Method Landing on the Stiefel Manifold via Newton–Schulz
+Iteration](https://arxiv.org/abs/2605.02838) by Xinhui Xiong, Bin Gao, and P.-A. Absil.
 
 ## Repository Layout
 
@@ -66,3 +56,17 @@ Each script accepts `--quiet` to suppress per-iteration progress output and
 `--out` to choose the output directory. The scripts write `summary.json` and
 `logs.json` with the metrics listed above, so plotting code can read the full
 per-iteration histories directly from `logs.json`.
+
+## Authors
+
+- Xinhui Xiong (AMSS, China)
+
+## Copyright
+
+Copyright (C) 2026, Xinhui Xiong, Bin Gao, P.-A. Absil.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
