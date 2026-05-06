@@ -1,8 +1,12 @@
 # SOLanding
 
-This repository contains the reference Python implementation for the paper
-[A Second-Order Method Landing on the Stiefel Manifold via Newton–Schulz
-Iteration](https://arxiv.org/abs/2605.02838) by Xinhui Xiong, Bin Gao, and P.-A. Absil.
+This is the code to reproduce the experiments in the following paper:
+
+> *A second-order method landing on the Stiefel manifold via Newton&ndash;Schulz iteration*
+>
+> Xinhui Xiong, Bin Gao, and P.-A. Absil
+>
+> <https://arxiv.org/abs/2605.02838>
 
 ## Repository Layout
 
@@ -16,46 +20,53 @@ experiments/
   PCA/                # Principal component analysis experiment
   ICA/                # Real-data independent component analysis experiment
 ```
+## Dependencies
 
-## Installation
+- Ubuntu 22.04
+- Python 3.12.1
+- NumPy 2.4.3
+- SciPy 1.17.1
+- MNE-Python 1.11.0 (required only for ICA data loading and preprocessing)
+
+## Get Started
+
+You can create a conda environment by running the following commands.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+conda create -n SOLanding_env python=3.12.1
+pip install numpy==2.4.3 scipy==1.17.1
+pip install mne==1.11.0
 ```
 
-The ICA experiment uses the MNE-Python sample EEG dataset. Install `mne`
-separately if you want to run that experiment:
+### Running the Experiments
 
+First, ensure your environment is activated:
 ```bash
-pip install mne
+conda activate SOLanding_env
 ```
 
-## Run Experiments
+Then, you can execute the individual experiments by running their respective modules:
 
-Orthogonal Procrustes:
+#### Orthogonal Procrustes
 
 ```bash
 python -m experiments.Procrustes.run
 ```
 
-Principal component analysis:
+#### Principal Component Analysis (PCA)
 
 ```bash
 python -m experiments.PCA.run
 ```
 
-Independent component analysis:
+#### Independent Component Analysis (ICA)
 
 ```bash
 python -m experiments.ICA.run
 ```
 
 Each script accepts `--quiet` to suppress per-iteration progress output and
-`--out` to choose the output directory. The scripts write `summary.json` and
-`logs.json` with the metrics listed above, so plotting code can read the full
-per-iteration histories directly from `logs.json`.
+`--out` to choose the output directory.
 
 ## Authors
 
