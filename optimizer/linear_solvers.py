@@ -6,7 +6,7 @@ This module implements matrix-variable Krylov solvers for linear systems
 
 where the unknown ``T`` and the right-hand side ``b`` are matrices in the
 tangent space of a layered Stiefel manifold, and all inner products are taken
-with respect to the paper's extended canonical metric
+with respect to the metric
 
     g_X(U, V) = <U, (I - 0.5 * X (X^T X)^{-1} X^T) V (X^T X)^{-1}>_F.
 
@@ -74,14 +74,14 @@ def g_inner(
     XTX: Optional[Array] = None,
     invXTX: Optional[Array] = None,
 ) -> float:
-    """Extended canonical metric inner product g_X(U, V).
+    """Inner product g_X(U, V).
 
     The formula is
 
         g_X(U, V) = <U, M_X[V]>_F,
 
     where M_X is the metric map defined above and <.,.>_F is the Frobenius
-    inner product. This function is intended for tangent-space matrices.
+    inner product.
     """
     MV = metric_map(X, V, XTX=XTX, invXTX=invXTX)
     return float(np.sum(U * MV))
@@ -221,7 +221,7 @@ def g_metric_cg(
     XTX: Optional[Array] = None,
     invXTX: Optional[Array] = None,
 ) -> Tuple[Array, Dict[str, object]]:
-    """Conjugate Gradient under the extended canonical metric.
+    """Conjugate Gradient under the metric g.
 
     This solver is intended for linear operators that are:
 
@@ -346,7 +346,7 @@ def g_metric_minres(
     XTX: Optional[Array] = None,
     invXTX: Optional[Array] = None,
 ) -> Tuple[Array, Dict[str, object]]:
-    """MINRES under the extended canonical metric.
+    """MINRES under the metric g.
 
     This solver targets g-self-adjoint operators that may be indefinite.
 
